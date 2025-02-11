@@ -281,7 +281,7 @@ namespace Modio.Models
     /// Community features enabled on the mod.io website.
     /// </summary>
     [Flags]
-    public enum CommunityOptions : byte
+    public enum CommunityOptions : UInt16
     {
         /// <summary>
         /// All of the options below are disabled.
@@ -291,17 +291,62 @@ namespace Modio.Models
         /// <summary>
         /// Enable comments.
         /// </summary>
-        COMMENTS = 0b0001,
+        COMMENTS = 1,
 
         /// <summary>
         /// Enable guides.
         /// </summary>
-        GUIDES = 0b0010,
+        GUIDES = 2,
 
         /// <summary>
-        /// Disable website "subscribe to install" text.
+        /// Pin on homepage
         /// </summary>
-        DISABLE_SUBSCRIBE = 0b0100,
+        PIN_ON_HOME_PAGE = 4,
+
+        /// <summary>
+        /// Show on homepage
+        /// </summary>
+        SHOW_ON_HOME_PAGE = 8,
+
+        /// <summary>
+        /// Show more on homepage
+        /// </summary>
+        SHOW_MORE_ON_HOME_PAGE = 16,
+
+        /// <summary>
+        /// Allow change status
+        /// </summary>
+        ALLOW_CHANGE_STATUS = 32,
+
+        /// <summary>
+        /// Enable Previews (Game must be hidden)
+        /// </summary>
+        ENABLE_PREVIEWS = 64,
+
+        /// <summary>
+        /// Allow preview share-URL (Previews must be enabled)
+        /// </summary>
+        ALLOW_PREVIEW_SHARE_URL = 128,
+
+        /// <summary>
+        /// Allow negative ratings
+        /// </summary>
+        ALLOW_NEGATIVE_RATINGS = 256,
+
+        /// <summary>
+        /// Allow mods to be edited via web
+        /// </summary>
+        ALLOW_MODS_TO_BE_EDITED_VIA_WEB = 512,
+
+        /// <summary>
+        /// Allow mod dependencies
+        /// </summary>
+        ALLOW_MOD_DEPENDENCIES = 1024,
+
+        /// <summary>
+        /// Allow comments on guides
+        /// </summary>
+        ALLOW_COMMENTS_ON_GUIDES = 2048,
     }
 
     /// <summary>
