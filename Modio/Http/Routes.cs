@@ -55,10 +55,15 @@ namespace Modio
         {
             return (HttpMethod.Post, new Uri("external/discordauth", UriKind.Relative));
         }
-        #endregion
+        
+		public static (HttpMethod, Uri) ExternalEpicGames()
+		{
+			return (HttpMethod.Post, new Uri("external/epicgamesauth", UriKind.Relative));
+		}
+		#endregion
 
-        #region Game
-        public static (HttpMethod, Uri) GetGames()
+		#region Game
+		public static (HttpMethod, Uri) GetGames()
         {
             return (HttpMethod.Get, new Uri("games", UriKind.Relative));
         }

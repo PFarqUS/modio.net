@@ -119,7 +119,16 @@ namespace Modio
             return await RequestToken(route, options.ToContent());
         }
 
-        private async Task<AccessToken> RequestToken((HttpMethod, Uri) route, HttpContent content)
+		/// <summary>
+		/// Request an access token on behalf of an Epic Games user.
+		/// </summary>
+		public async Task<AccessToken> External(EpicGamesAuth options)
+		{
+			var route = Routes.ExternalEpicGames();
+			return await RequestToken(route, options.ToContent());
+		}
+
+		private async Task<AccessToken> RequestToken((HttpMethod, Uri) route, HttpContent content)
         {
             var (method, path) = route;
             var req = new Request(method, path, content);
