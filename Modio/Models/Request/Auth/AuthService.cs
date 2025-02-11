@@ -28,6 +28,9 @@ namespace Modio
 
         ///
         Discord,
+
+        ///
+        EpicGames,
     }
 
     internal static class AuthServiceExtension
@@ -50,8 +53,10 @@ namespace Modio
                     return "oculus";
                 case AuthService.Discord:
                     return "discord";
-            }
-            throw new InvalidOperationException();
+				case AuthService.EpicGames:
+					return "epicgames";
+			}
+			throw new InvalidOperationException();
         }
     }
 }
